@@ -75,7 +75,8 @@ export class ClaudeProvider extends BaseLLMProvider {
     // Note: Anthropic doesn't provide a native embedding API
     // For now, we'll return a simple hash-based embedding for compatibility
     // In production, you might want to use a separate embedding service
-    const hash = (await import('crypto')).createHash('sha256').update(text).digest();
+    // SHA512 produces 64 bytes, enough for 32 int16 values
+    const hash = (await import('crypto')).createHash('sha512').update(text).digest();
     const embedding: number[] = [];
     for (let i = 0; i < 64; i += 2) {
       embedding.push(hash.readInt16BE(i) / 32768);

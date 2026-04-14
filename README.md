@@ -562,6 +562,7 @@ llm-wiki/
 │   │   ├── base.ts           # 基类
 │   │   ├── claude.ts         # Claude
 │   │   ├── openai.ts         # OpenAI
+│   │   ├── openai-compatible.ts  # OpenAI Compatible (智谱/DeepSeek等)
 │   │   └── ollama.ts         # Ollama
 │   ├── parsers/              # 文件解析器
 │   │   ├── markdown.ts       # Markdown

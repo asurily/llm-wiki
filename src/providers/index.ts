@@ -8,7 +8,7 @@ export { BaseLLMProvider } from './base.js';
 export { ClaudeProvider } from './claude.js';
 export { OpenAIProvider } from './openai.js';
 export { OllamaProvider } from './ollama.js';
-export { OpenAICompatibleProvider, OPENAI_COMPATIBLE_PROVIDERS } from './openai-compatible.js';
+export { OpenAICompatibleProvider, OPENAI_COMPATIBLE_PROVIDERS, OpenAICompatibleProviderKey } from './openai-compatible.js';
 
 export function createProvider(config: LLMProviderConfig): LLMProvider {
   switch (config.provider) {

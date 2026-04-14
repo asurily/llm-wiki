@@ -66,7 +66,8 @@ export class OpenAICompatibleProvider extends BaseLLMProvider {
       return response.data[0].embedding;
     } catch {
       // If embedding model is not available, return hash-based embedding
-      const hash = (await import('crypto')).createHash('sha256').update(text).digest();
+      // SHA512 produces 64 bytes, enough for 32 int16 values
+      const hash = (await import('crypto')).createHash('sha512').update(text).digest();
       const embedding: number[] = [];
       for (let i = 0; i < 64; i += 2) {
         embedding.push(hash.readInt16BE(i) / 32768);
