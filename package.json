@@ -1,0 +1,45 @@
+{
+  "name": "llm-wiki",
+  "version": "0.1.0",
+  "description": "CLI tool to compile raw files into structured Wiki knowledge base using LLM",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "llm-wiki": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "llm",
+    "wiki",
+    "obsidian",
+    "knowledge-base",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "dotenv": "^16.0.0",
+    "glob": "^10.0.0",
+    "gray-matter": "^4.0.3",
+    "mammoth": "^1.6.0",
+    "openai": "^4.0.0",
+    "ora": "^8.0.0",
+    "pdf-parse": "^1.1.1",
+    "uuid": "^9.0.0",
+    "yaml": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/uuid": "^9.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.0.0"
+  }
+}
